@@ -1,0 +1,96 @@
+@use 'sass:math';
+@import '@unocss/reset/tailwind.css';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@unocss;
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  @apply bg-background c-gray-100;
+}
+
+* {
+  line-height: calc(1em + 4px) !important;
+  outline: none;
+}
+
+:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+  width: 6px;
+  height: 6px;
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  display: none;
+  background: var(--gray-800);
+  border-radius: 4px;
+}
+
+// 边框流光效果
+.design-gradient-border {
+  position: relative;
+  z-index: 1;
+  border: 1px solid transparent;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit; /* 继承父元素的圆角 */
+    z-index: -1;
+    padding: 1px; /* 边框宽度 */
+    mask:
+      linear-gradient(#ffffff 0 100%) content-box,
+      linear-gradient(#ffffff 0 100%);
+    mask-composite: subtract;
+    animation: border-rotate 3s infinite linear;
+  }
+}
+
+@keyframes border-rotate {
+  @for $i from 0 through 100 {
+    #{math.percentage(calc($i / 100))} {
+      background-image: linear-gradient(
+        #{-$i * 3.6}deg,
+        #f9cf00 -0.87%,
+        #fdeb9687 26.14%,
+        #ffffff33 49.3%
+      );
+    }
+  }
+}
+
+// 文字流光效果
+.design-gradient-text {
+  display: inline-block;
+  background: linear-gradient(
+    90deg,
+    #a7a7a7 0%,
+    #a7a7a7 30%,
+    #ffffff 40%,
+    #ffffff 60%,
+    #a7a7a7 70%,
+    #a7a7a7 100%
+  );
+  background-size: 200%; /* 背景尺寸比文字宽度大一倍，让流光可以完全穿过 */
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: text-shimmer 2s linear infinite;
+}
+
+@keyframes text-shimmer {
+  0% {
+    background-position: 100% 0;
+  }
+
+  100% {
+    background-position: -100% 0;
+  }
+}

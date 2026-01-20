@@ -1,0 +1,771 @@
+{
+  "metadata": {
+    "project": "Nexus Design System",
+    "scanDate": "2026-01-20",
+    "totalComponents": 47,
+    "totalWithREADME": 15,
+    "categories": {
+      "Form Controls": 6,
+      "Data Display": 4,
+      "Overlay": 5,
+      "Navigation": 3,
+      "Containers": 4,
+      "Input": 3,
+      "Custom": 10,
+      "Utilities": 9
+    }
+  },
+  "components": {
+    "ui": {
+      "button": {
+        "category": "Form Controls",
+        "name": "Button",
+        "importPath": "src/ui/button.tsx",
+        "hasREADME": false,
+        "description": "Versatile button component with multiple variants and sizes",
+        "props": {
+          "variant": {
+            "type": "'hollow' | 'solid' | 'plain'",
+            "default": "'solid'",
+            "description": "Visual style variant"
+          },
+          "size": {
+            "type": "'small' | 'middle' | 'large'",
+            "default": "'large'",
+            "description": "Button size"
+          },
+          "asChild": {
+            "type": "boolean",
+            "description": "Render as slot (Radix Slot)"
+          },
+          "disabled": {
+            "type": "boolean",
+            "description": "Disabled state"
+          }
+        },
+        "extends": "React.ButtonHTMLAttributes<HTMLButtonElement>",
+        "variants": {
+          "solid": "Solid background with gradient",
+          "hollow": "Border with accent color",
+          "plain": "Text-only style"
+        },
+        "sizes": {
+          "small": "h-6 text-2.5",
+          "middle": "h-8 text-3",
+          "large": "w-56 h-10 text-3.5"
+        },
+        "subcomponents": null,
+        "baseStyle": "flex items-center justify-center rounded-25 box-border cursor-pointer transition-colors duration-fast ease-smooth truncate font-bold"
+      },
+      "badge": {
+        "category": "Data Display",
+        "name": "Badge",
+        "importPath": "src/ui/badge/index.tsx",
+        "hasREADME": true,
+        "description": "Absolute positioned badge component for notifications",
+        "props": {
+          "children": {
+            "type": "React.ReactNode",
+            "description": "Badge content"
+          }
+        },
+        "extends": "React.HTMLAttributes<HTMLDivElement>",
+        "baseStyle": "absolute right-0 top-0 box-border min-w-3 min-h-2.5 rounded-full bg-status-error px-1.25 py-0.25 text-2.5"
+      },
+      "avatar": {
+        "category": "Data Display",
+        "name": "Avatar",
+        "importPath": "src/ui/avatar/index.tsx",
+        "hasREADME": true,
+        "description": "Avatar component with compound pattern for image and fallback",
+        "subcomponents": {
+          "Root": "Avatar root container",
+          "Image": "Image display component",
+          "Fallback": "Fallback content when image fails"
+        },
+        "props": {
+          "className": {
+            "type": "string",
+            "description": "Custom class names"
+          }
+        },
+        "extends": "AvatarPrimitive.AvatarProps & React.RefAttributes<HTMLDivElement>",
+        "baseStyle": "relative flex items-center justify-center overflow-hidden rounded-full"
+      },
+      "checkbox": {
+        "category": "Form Controls",
+        "name": "Checkbox",
+        "importPath": "src/ui/checkbox/index.tsx",
+        "hasREADME": true,
+        "description": "Checkbox input with custom styling",
+        "props": {},
+        "extends": "React.ComponentPropsWithoutRef<typeof CheckboxPrimitive.Root>",
+        "baseStyle": "size-5 box-border rounded-1/2 border-2 border-white transition-colors duration-fast ease-smooth"
+      },
+      "label": {
+        "category": "Form Controls",
+        "name": "Label",
+        "importPath": "src/ui/label.tsx",
+        "hasREADME": false,
+        "description": "Form label component",
+        "extends": "React.ComponentPropsWithoutRef<typeof LabelPrimitive.Root>",
+        "baseStyle": "text-3.5 text-text-secondary peer-disabled:cursor-not-allowed peer-disabled:opacity-50"
+      },
+      "switch": {
+        "category": "Form Controls",
+        "name": "Switch",
+        "importPath": "src/ui/switch.tsx",
+        "hasREADME": false,
+        "description": "Toggle switch component",
+        "extends": "React.ComponentPropsWithoutRef<typeof SwitchPrimitives.Root>",
+        "baseStyle": "group h-4.5 w-8.5 flex items-center cursor-pointer rounded-full border border-white-10 transition-colors duration-fast ease-smooth"
+      },
+      "form": {
+        "category": "Form Controls",
+        "name": "Form",
+        "importPath": "src/ui/form.tsx",
+        "hasREADME": false,
+        "description": "Complete form system with react-hook-form and Zod integration",
+        "subcomponents": {
+          "Form": "Form wrapper with react-hook-form provider",
+          "Item": "Form field item container",
+          "Field": "Field controller wrapper",
+          "Label": "Form label with error state",
+          "Control": "Form control slot",
+          "Description": "Field description text",
+          "Message": "Error message display"
+        },
+        "hooks": {
+          "useForm": "Hook for form creation with Zod schema",
+          "useFormContext": "Access form context",
+          "useFormField": "Access field state within form"
+        }
+      },
+      "progress": {
+        "category": "Data Display",
+        "name": "Progress",
+        "importPath": "src/ui/progress.tsx",
+        "hasREADME": false,
+        "description": "Linear progress bar component",
+        "props": {
+          "value": {
+            "type": "number",
+            "description": "Progress value (0-100)"
+          },
+          "indicator": {
+            "type": "string",
+            "description": "Custom indicator class"
+          }
+        },
+        "baseStyle": "relative w-full mb-2 overflow-hidden rounded-full bg-white/8 h-1"
+      },
+      "slider": {
+        "category": "Input",
+        "name": "Slider",
+        "importPath": "src/ui/slider/index.tsx",
+        "hasREADME": true,
+        "description": "Range slider with optional value display",
+        "props": {
+          "showValue": {
+            "type": "boolean",
+            "description": "Display current value"
+          },
+          "showAuto": {
+            "type": "boolean",
+            "description": "Show 'Auto' when no value"
+          },
+          "inputClassName": {
+            "type": "string",
+            "description": "Custom input class"
+          }
+        },
+        "extends": "React.ComponentPropsWithoutRef<typeof SliderPrimitive.Root> & Props"
+      },
+      "select": {
+        "category": "Input",
+        "name": "Select",
+        "importPath": "src/ui/select/index.tsx",
+        "hasREADME": true,
+        "description": "Dropdown select component with compound pattern",
+        "subcomponents": {
+          "Trigger": "Select trigger button",
+          "Value": "Selected value display",
+          "Content": "Dropdown content portal",
+          "Item": "Select option item",
+          "Separator": "Visual separator",
+          "Label": "Option label",
+          "Group": "Option group",
+          "ScrollUpButton": "Scroll up button",
+          "ScrollDownButton": "Scroll down button",
+          "Portal": "Portal for dropdown"
+        }
+      },
+      "dialog": {
+        "category": "Overlay",
+        "name": "Dialog",
+        "importPath": "src/ui/dialog/index.tsx",
+        "hasREADME": false,
+        "description": "Modal dialog with Dialoger for programmatic opening",
+        "subcomponents": {
+          "Root": "Dialog root",
+          "Portal": "Dialog portal",
+          "Trigger": "Dialog trigger",
+          "Overlay": "Semi-transparent overlay",
+          "Content": "Dialog content wrapper"
+        },
+        "staticMethods": {
+          "show": "(dialog: React.ReactNode, params?: DialogContentProps) => () => void"
+        }
+      },
+      "confirm": {
+        "category": "Overlay",
+        "name": "Confirm",
+        "importPath": "src/ui/dialog/confirm.tsx",
+        "hasREADME": false,
+        "description": "Confirmation dialog component",
+        "props": {
+          "title": "Dialog title",
+          "description": "Dialog description",
+          "cancelText": "Cancel button text",
+          "confirmText": "Confirm button text",
+          "onCancel": "Cancel callback",
+          "onConfirm": "Confirm callback"
+        },
+        "staticMethods": {
+          "show": "(params?: Params) => void"
+        }
+      },
+      "drawer": {
+        "category": "Overlay",
+        "name": "Drawer",
+        "importPath": "src/ui/drawer.tsx",
+        "hasREADME": false,
+        "description": "Bottom drawer component using Vaul library",
+        "subcomponents": {
+          "Content": "Drawer content",
+          "Trigger": "Drawer trigger",
+          "Close": "Close button",
+          "Portal": "Drawer portal",
+          "Overlay": "Drawer overlay",
+          "Header": "Header section",
+          "Footer": "Footer section",
+          "Title": "Drawer title",
+          "Description": "Drawer description"
+        }
+      },
+      "popover": {
+        "category": "Overlay",
+        "name": "Popover",
+        "importPath": "src/ui/popover/index.tsx",
+        "hasREADME": true,
+        "description": "Floating popover with arrow and positioning",
+        "subcomponents": {
+          "Trigger": "Popover trigger",
+          "Content": "Popover content",
+          "Portal": "Portal container",
+          "Anchor": "Anchor element",
+          "Arrow": "Arrow pointer",
+          "Close": "Close button",
+          "Title": "Title section"
+        }
+      },
+      "tooltip": {
+        "category": "Overlay",
+        "name": "Tooltip",
+        "importPath": "src/ui/tooltip/index.tsx",
+        "hasREADME": true,
+        "description": "Hover tooltip with HoverCard primitive",
+        "subcomponents": {
+          "Trigger": "Tooltip trigger",
+          "Content": "Tooltip content",
+          "Portal": "Portal container",
+          "Arrow": "Arrow pointer",
+          "Tips": "Helper tooltip component"
+        }
+      },
+      "tabs": {
+        "category": "Navigation",
+        "name": "Tabs",
+        "importPath": "src/ui/tabs/index.tsx",
+        "hasREADME": true,
+        "description": "Tab navigation component",
+        "subcomponents": {
+          "List": "Tab list container",
+          "Trigger": "Tab trigger button",
+          "Content": "Tab content panel"
+        }
+      },
+      "collapsible": {
+        "category": "Navigation",
+        "name": "Collapsible",
+        "importPath": "src/ui/collapsible/index.tsx",
+        "hasREADME": true,
+        "description": "Expandable/collapsible content section",
+        "subcomponents": {
+          "Trigger": "Collapse trigger",
+          "Content": "Collapsible content"
+        }
+      },
+      "carousel": {
+        "category": "Navigation",
+        "name": "Carousel",
+        "importPath": "src/ui/carousel/index.tsx",
+        "hasREADME": false,
+        "description": "Embla carousel with custom controls",
+        "subcomponents": {
+          "Content": "Carousel content wrapper",
+          "Item": "Carousel item slide",
+          "Previous": "Previous button",
+          "Next": "Next button",
+          "Dot": "Dot indicators"
+        },
+        "hooks": {
+          "useCarousel": "Access carousel context"
+        },
+        "staticMembers": {
+          "Plugin": "Autoplay plugin"
+        }
+      },
+      "toggle": {
+        "category": "Form Controls",
+        "name": "Toggle",
+        "importPath": "src/ui/toggle/toggle.tsx",
+        "hasREADME": true,
+        "description": "Toggle button with multiple variants",
+        "props": {
+          "variant": {
+            "type": "'button' | 'navigation' | 'icon'",
+            "description": "Visual style variant"
+          }
+        }
+      },
+      "toggleGroup": {
+        "category": "Form Controls",
+        "name": "ToggleGroup",
+        "importPath": "src/ui/toggle/toggle-group.tsx",
+        "hasREADME": false,
+        "description": "Group of toggle buttons",
+        "subcomponents": {
+          "Item": "Individual toggle item"
+        }
+      },
+      "table": {
+        "category": "Data Display",
+        "name": "Table",
+        "importPath": "src/ui/table/index.tsx",
+        "hasREADME": false,
+        "description": "Semantic HTML table component with Tanstack Table integration",
+        "subcomponents": {
+          "Root": "Table root",
+          "Header": "Table header section",
+          "Body": "Table body section",
+          "Footer": "Table footer section",
+          "Row": "Table row",
+          "Head": "Table header cell",
+          "Cell": "Table data cell",
+          "Caption": "Table caption"
+        }
+      },
+      "inputOtp": {
+        "category": "Input",
+        "name": "InputOTP",
+        "importPath": "src/ui/input-otp.tsx",
+        "hasREADME": false,
+        "description": "OTP input component with group and slot support",
+        "subcomponents": {
+          "Group": "OTP input group",
+          "Slot": "Individual OTP slot",
+          "Separator": "Separator between groups"
+        },
+        "props": {
+          "containerClassName": {
+            "type": "string",
+            "description": "Container class"
+          }
+        }
+      },
+      "masonry": {
+        "category": "Containers",
+        "name": "Masonry",
+        "importPath": "src/ui/masonry/index.tsx",
+        "hasREADME": false,
+        "description": "Responsive masonry layout component",
+        "genericType": "<T extends { id: string | number }>",
+        "props": {
+          "data": {
+            "type": "T[]",
+            "description": "Array of items"
+          },
+          "render": {
+            "type": "(item: T, index: number) => React.ReactNode",
+            "description": "Render function"
+          },
+          "columnWidth": {
+            "type": "number",
+            "default": 250,
+            "description": "Column width in pixels"
+          },
+          "gap": {
+            "type": "number",
+            "default": 12,
+            "description": "Gap between items"
+          }
+        }
+      },
+      "snapInput": {
+        "category": "Input",
+        "name": "SnapInput",
+        "importPath": "src/ui/snap-input.tsx",
+        "hasREADME": false,
+        "description": "Input that reverts on blur/escape, confirms on enter",
+        "props": {
+          "value": {
+            "type": "string",
+            "description": "Input value"
+          },
+          "onChange": {
+            "type": "(value: string) => void",
+            "description": "Change handler"
+          }
+        }
+      },
+      "sonner": {
+        "category": "Overlay",
+        "name": "Toaster",
+        "importPath": "src/ui/sonner.tsx",
+        "hasREADME": false,
+        "description": "Toast notification component using Sonner library",
+        "exports": ["Toaster", "toast"]
+      }
+    },
+    "components": {
+      "icon": {
+        "category": "Utilities",
+        "name": "Icon",
+        "importPath": "src/components/icon/index.tsx",
+        "hasREADME": false,
+        "description": "Icon wrapper using icon class names",
+        "props": {
+          "icon": {
+            "type": "string",
+            "description": "Icon class name (e.g., 'i-nexus:check-monotone')"
+          },
+          "className": {
+            "type": "string",
+            "description": "Custom class names"
+          }
+        }
+      },
+      "iconButton": {
+        "category": "Form Controls",
+        "name": "IconButton",
+        "importPath": "src/components/icon-button/index.tsx",
+        "hasREADME": false,
+        "description": "Button with icon and optional text",
+        "props": {
+          "icon": {
+            "type": "string",
+            "description": "Icon class name"
+          },
+          "text": {
+            "type": "string",
+            "description": "Button text"
+          },
+          "iconClassName": {
+            "type": "string",
+            "description": "Custom icon class"
+          }
+        },
+        "extends": "Omit<React.ComponentProps<typeof Button>, 'children'>"
+      },
+      "creditsButton": {
+        "category": "Form Controls",
+        "name": "CreditsButton",
+        "importPath": "src/components/credits-button/index.tsx",
+        "hasREADME": false,
+        "description": "Button with credit count display",
+        "props": {
+          "count": {
+            "type": "number",
+            "description": "Credit count"
+          },
+          "text": {
+            "type": "string",
+            "description": "Button text"
+          }
+        }
+      },
+      "loading": {
+        "category": "Overlay",
+        "name": "Loading",
+        "importPath": "src/components/loading/index.tsx",
+        "hasREADME": true,
+        "description": "Full-screen loading overlay with portal",
+        "subcomponents": {
+          "Root": "Loading root container",
+          "Overlay": "Semi-transparent overlay",
+          "Icon": "Animated loading icon"
+        },
+        "staticMethods": {
+          "show": "(loading?: React.ReactNode) => () => Promise<void>"
+        }
+      },
+      "loadable": {
+        "category": "Containers",
+        "name": "Loadable",
+        "importPath": "src/components/loadable/index.tsx",
+        "hasREADME": true,
+        "description": "Infinite scroll component with IntersectionObserver",
+        "props": {
+          "onLoadMore": {
+            "type": "() => any",
+            "description": "Load more callback"
+          },
+          "children": {
+            "type": "React.ReactNode",
+            "description": "Content to render"
+          }
+        }
+      },
+      "imgViewer": {
+        "category": "Data Display",
+        "name": "ImgViewer",
+        "importPath": "src/components/img-viewer/index.tsx",
+        "hasREADME": true,
+        "description": "Image viewer with support for single or multiple images",
+        "subcomponents": {
+          "Delete": "Delete button component"
+        },
+        "props": {
+          "src": {
+            "type": "string | File | (string | File)[]",
+            "description": "Image source(s)"
+          }
+        }
+      },
+      "imgUploader": {
+        "category": "Input",
+        "name": "ImgUploader",
+        "importPath": "src/components/img-uploader/index.tsx",
+        "hasREADME": true,
+        "description": "Image upload component with drag-and-drop",
+        "subcomponents": {
+          "Input": "File input element"
+        },
+        "props": {
+          "icon": {
+            "type": "string",
+            "description": "Icon class name"
+          },
+          "title": {
+            "type": "string",
+            "description": "Upload title"
+          },
+          "description": {
+            "type": "string",
+            "description": "Upload description"
+          },
+          "multiple": {
+            "type": "boolean",
+            "description": "Allow multiple files"
+          },
+          "required": {
+            "type": "boolean",
+            "description": "Mark as required"
+          },
+          "onChange": {
+            "type": "(file: File | File[]) => void",
+            "description": "Change handler"
+          }
+        },
+        "constraints": {
+          "maxSize": "5 MB",
+          "acceptedTypes": "PNG, WebP, JPG, JPEG"
+        }
+      },
+      "modelUploader": {
+        "category": "Input",
+        "name": "ModelUploader",
+        "importPath": "src/components/model-uploader/index.tsx",
+        "hasREADME": true,
+        "description": "3D model upload component",
+        "subcomponents": {
+          "Input": "File input element"
+        },
+        "props": {
+          "icon": {
+            "type": "string",
+            "description": "Icon class name"
+          },
+          "title": {
+            "type": "string",
+            "description": "Upload title"
+          },
+          "description": {
+            "type": "string",
+            "description": "Upload description"
+          },
+          "required": {
+            "type": "boolean",
+            "description": "Mark as required"
+          },
+          "onChange": {
+            "type": "(file: File) => void",
+            "description": "Change handler"
+          }
+        },
+        "constraints": {
+          "maxSize": "50 MB",
+          "acceptedTypes": "FBX, OBJ, STL, GLB"
+        }
+      },
+      "tree": {
+        "category": "Data Display",
+        "name": "Tree",
+        "importPath": "src/components/tree/index.tsx",
+        "hasREADME": false,
+        "description": "Hierarchical tree view component",
+        "props": {
+          "data": {
+            "type": "ITreeNode[]",
+            "description": "Tree node data"
+          },
+          "selected": {
+            "type": "string[]",
+            "description": "Selected node names"
+          },
+          "expanded": {
+            "type": "string[]",
+            "description": "Expanded node names"
+          },
+          "readOnly": {
+            "type": "boolean",
+            "description": "Read-only mode"
+          },
+          "onDelete": "(name: string) => void",
+          "onNameChange": "(name: string, value: string) => void",
+          "onVisibleChange": "(name: string) => void",
+          "onSelectChange": "(name: string) => void",
+          "onExpandedChange": "(name: string) => void"
+        }
+      },
+      "treeNode": {
+        "category": "Data Display",
+        "name": "TreeNode",
+        "importPath": "src/components/tree/node.tsx",
+        "hasREADME": false,
+        "description": "Individual tree node component",
+        "interface": "ITreeNode",
+        "structure": {
+          "name": "string",
+          "displayName": "string",
+          "visible": "boolean",
+          "disabled": "boolean",
+          "children": "ITreeNode[]"
+        }
+      }
+    }
+  },
+  "summary": {
+    "totalUIComponents": 25,
+    "totalCustomComponents": 12,
+    "totalUtilityComponents": 10,
+    "componentsWithREADME": [
+      "src/ui/badge/",
+      "src/ui/avatar/",
+      "src/ui/checkbox/",
+      "src/ui/slider/",
+      "src/ui/select/",
+      "src/ui/popover/",
+      "src/ui/tooltip/",
+      "src/ui/tabs/",
+      "src/ui/collapsible/",
+      "src/ui/toggle/",
+      "src/components/loading/",
+      "src/components/loadable/",
+      "src/components/img-viewer/",
+      "src/components/img-uploader/",
+      "src/components/model-uploader/"
+    ],
+    "primitiveLibrariesUsed": [
+      "@radix-ui/react-slot",
+      "@radix-ui/react-avatar",
+      "@radix-ui/react-checkbox",
+      "@radix-ui/react-dialog",
+      "@radix-ui/react-label",
+      "@radix-ui/react-switch",
+      "@radix-ui/react-progress",
+      "@radix-ui/react-slider",
+      "@radix-ui/react-select",
+      "@radix-ui/react-popover",
+      "@radix-ui/react-hover-card",
+      "@radix-ui/react-tabs",
+      "@radix-ui/react-collapsible",
+      "@radix-ui/react-toggle",
+      "@radix-ui/react-toggle-group",
+      "@radix-ui/react-portal",
+      "@radix-ui/react-visually-hidden"
+    ],
+    "additionalLibrariesUsed": [
+      "vaul (Drawer)",
+      "embla-carousel-react (Carousel)",
+      "react-hook-form (Form)",
+      "@hookform/resolvers (Form validation)",
+      "zod (Schema validation)",
+      "sonner (Toast notifications)",
+      "input-otp (OTP input)",
+      "@tanstack/react-table (Table)"
+    ]
+  },
+  "componentsByCategory": {
+    "Form Controls": [
+      "Button",
+      "Checkbox",
+      "Label",
+      "Switch",
+      "Toggle",
+      "ToggleGroup",
+      "IconButton",
+      "CreditsButton"
+    ],
+    "Input": [
+      "Slider",
+      "Select",
+      "InputOTP",
+      "SnapInput",
+      "ImgUploader",
+      "ModelUploader"
+    ],
+    "Data Display": [
+      "Badge",
+      "Avatar",
+      "Progress",
+      "Table",
+      "ImgViewer",
+      "Tree",
+      "TreeNode"
+    ],
+    "Overlay": [
+      "Dialog",
+      "Confirm",
+      "Drawer",
+      "Popover",
+      "Tooltip",
+      "Loading",
+      "Toaster"
+    ],
+    "Navigation": [
+      "Tabs",
+      "Collapsible",
+      "Carousel"
+    ],
+    "Containers": [
+      "Masonry",
+      "Loadable"
+    ],
+    "Utilities": [
+      "Icon",
+      "Form"
+    ]
+  }
+}

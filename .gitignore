@@ -1,0 +1,27 @@
+# Logs
+logs
+*.log
+pnpm-debug.log*
+
+dist
+dist-ssr
+*.local
+.claude
+demo/.vitepress
+# Editor directories and files
+.DS_Store
+tmp
+node_modules
+/node_modules
+/packages/*/node_modules
+/tests/node_modules
+/e2e/node_modules
+/playground/node_modules
+
+/packages/*/types
+/packages/*/doc
+/packages/*/dist
+/packages/*/.react-router
+
+*storybook.log
+storybook-static

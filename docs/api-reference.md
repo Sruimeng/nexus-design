@@ -28,7 +28,7 @@ pnpm add @sruim/nexus-design
 
 ```typescript
 // uno.config.ts
-import { theme } from '@sruim/nexus-design/theme';
+import { theme } from '@sruim/nexus-design';
 import { defineConfig, presetUno } from 'unocss';
 
 export default defineConfig({
@@ -47,7 +47,7 @@ import '@sruim/nexus-design/style.css';
 ### 3. Setup Dialoger (Required for Dialog.show)
 
 ```tsx
-import { Dialoger } from '@sruim/nexus-design/ui';
+import { Dialoger } from '@sruim/nexus-design';
 
 function App() {
   return (
@@ -65,11 +65,7 @@ function App() {
 
 | Path | Description |
 |------|-------------|
-| `@sruim/nexus-design` | All exports |
-| `@sruim/nexus-design/ui` | UI primitives |
-| `@sruim/nexus-design/components` | Composite components |
-| `@sruim/nexus-design/utils` | Utility functions |
-| `@sruim/nexus-design/theme` | UnoCSS theme |
+| `@sruim/nexus-design` | All exports (UI, components, utils, theme) |
 | `@sruim/nexus-design/style.css` | Global styles |
 
 ---
@@ -79,7 +75,7 @@ function App() {
 ### Button
 
 ```tsx
-import { Button } from '@sruim/nexus-design/ui';
+import { Button } from '@sruim/nexus-design';
 ```
 
 | Prop | Type | Default | Description |
@@ -106,7 +102,7 @@ import { Button } from '@sruim/nexus-design/ui';
 ### Dialog
 
 ```tsx
-import { Dialog, Dialoger } from '@sruim/nexus-design/ui';
+import { Dialog, Dialoger } from '@sruim/nexus-design';
 ```
 
 **Compound Components:**
@@ -144,7 +140,7 @@ const close = Dialog.show(<YourContent />);
 ### Confirm
 
 ```tsx
-import { Confirm } from '@sruim/nexus-design/ui';
+import { Confirm } from '@sruim/nexus-design';
 ```
 
 | Prop | Type | Description |
@@ -178,7 +174,7 @@ Confirm.show({
 ### Select
 
 ```tsx
-import { Select } from '@sruim/nexus-design/ui';
+import { Select } from '@sruim/nexus-design';
 ```
 
 **Compound Components:**
@@ -210,7 +206,7 @@ import { Select } from '@sruim/nexus-design/ui';
 ### Tabs
 
 ```tsx
-import { Tabs } from '@sruim/nexus-design/ui';
+import { Tabs } from '@sruim/nexus-design';
 ```
 
 **Compound Components:**
@@ -235,7 +231,7 @@ import { Tabs } from '@sruim/nexus-design/ui';
 ### Popover
 
 ```tsx
-import { Popover } from '@sruim/nexus-design/ui';
+import { Popover } from '@sruim/nexus-design';
 ```
 
 **Compound Components:**
@@ -263,7 +259,7 @@ import { Popover } from '@sruim/nexus-design/ui';
 ### Tooltip
 
 ```tsx
-import { Tooltip } from '@sruim/nexus-design/ui';
+import { Tooltip } from '@sruim/nexus-design';
 ```
 
 **Compound Components:**
@@ -295,7 +291,7 @@ import { Tooltip } from '@sruim/nexus-design/ui';
 ### Checkbox
 
 ```tsx
-import { Checkbox } from '@sruim/nexus-design/ui';
+import { Checkbox } from '@sruim/nexus-design';
 ```
 
 | Prop | Type | Description |
@@ -313,7 +309,7 @@ import { Checkbox } from '@sruim/nexus-design/ui';
 ### Switch
 
 ```tsx
-import { Switch } from '@sruim/nexus-design/ui';
+import { Switch } from '@sruim/nexus-design';
 ```
 
 | Prop | Type | Description |
@@ -331,7 +327,7 @@ import { Switch } from '@sruim/nexus-design/ui';
 ### Slider
 
 ```tsx
-import { Slider } from '@sruim/nexus-design/ui';
+import { Slider } from '@sruim/nexus-design';
 ```
 
 | Prop | Type | Default | Description |
@@ -355,7 +351,7 @@ import { Slider } from '@sruim/nexus-design/ui';
 ### Progress
 
 ```tsx
-import { Progress } from '@sruim/nexus-design/ui';
+import { Progress } from '@sruim/nexus-design';
 ```
 
 | Prop | Type | Description |
@@ -372,7 +368,7 @@ import { Progress } from '@sruim/nexus-design/ui';
 ### Toggle
 
 ```tsx
-import { Toggle } from '@sruim/nexus-design/ui';
+import { Toggle } from '@sruim/nexus-design';
 ```
 
 | Prop | Type | Description |
@@ -392,7 +388,7 @@ import { Toggle } from '@sruim/nexus-design/ui';
 ### ToggleGroup
 
 ```tsx
-import { ToggleGroup } from '@sruim/nexus-design/ui';
+import { ToggleGroup } from '@sruim/nexus-design';
 ```
 
 **Compound Components:**
@@ -423,7 +419,7 @@ import { ToggleGroup } from '@sruim/nexus-design/ui';
 ### Avatar
 
 ```tsx
-import { Avatar } from '@sruim/nexus-design/ui';
+import { Avatar } from '@sruim/nexus-design';
 ```
 
 **Compound Components:**
@@ -443,7 +439,7 @@ import { Avatar } from '@sruim/nexus-design/ui';
 ### Badge
 
 ```tsx
-import { Badge } from '@sruim/nexus-design/ui';
+import { Badge } from '@sruim/nexus-design';
 ```
 
 Positioned absolutely (top-right). Parent needs `position: relative`.
@@ -460,7 +456,7 @@ Positioned absolutely (top-right). Parent needs `position: relative`.
 ### Drawer
 
 ```tsx
-import { Drawer } from '@sruim/nexus-design/ui';
+import { Drawer } from '@sruim/nexus-design';
 ```
 
 **Compound Components:**
@@ -495,7 +491,7 @@ import { Drawer } from '@sruim/nexus-design/ui';
 ### Form
 
 ```tsx
-import { Form, useForm } from '@sruim/nexus-design/ui';
+import { Form, useForm } from '@sruim/nexus-design';
 ```
 
 **Compound Components:**
@@ -546,7 +542,7 @@ const form = useForm((z) => ({
 ### Icon
 
 ```tsx
-import { Icon } from '@sruim/nexus-design/components';
+import { Icon } from '@sruim/nexus-design';
 ```
 
 | Prop | Type | Description |
@@ -563,7 +559,7 @@ import { Icon } from '@sruim/nexus-design/components';
 ### IconButton
 
 ```tsx
-import { IconButton } from '@sruim/nexus-design/components';
+import { IconButton } from '@sruim/nexus-design';
 ```
 
 | Prop | Type | Description |
@@ -585,7 +581,7 @@ import { IconButton } from '@sruim/nexus-design/components';
 ### cn
 
 ```tsx
-import { cn } from '@sruim/nexus-design/utils';
+import { cn } from '@sruim/nexus-design';
 ```
 
 Merges class names with Tailwind conflict resolution.
@@ -599,7 +595,7 @@ cn('px-4 py-2', condition && 'bg-blue', className)
 ### Helper Functions
 
 ```tsx
-import { sleep, jump, download, copy, getSuffix, checkSize, checkType } from '@sruim/nexus-design/utils';
+import { sleep, jump, download, copy, getSuffix, checkSize, checkType } from '@sruim/nexus-design';
 ```
 
 | Function | Signature | Description |
@@ -619,7 +615,7 @@ import { sleep, jump, download, copy, getSuffix, checkSize, checkType } from '@s
 ### Colors
 
 ```typescript
-import { theme } from '@sruim/nexus-design/theme';
+import { theme } from '@sruim/nexus-design';
 ```
 
 | Token | Values | Usage |
@@ -645,7 +641,7 @@ import { theme } from '@sruim/nexus-design/theme';
 ### Materials (Glass Effects)
 
 ```tsx
-import { FrostGlass, DeepGlass, Void } from '@sruim/nexus-design/tokens/materials';
+import { FrostGlass, DeepGlass, Void } from '@sruim/nexus-design';
 ```
 
 | Token | Effect |
@@ -674,7 +670,7 @@ import { FrostGlass, DeepGlass, Void } from '@sruim/nexus-design/tokens/material
 All components export their prop types:
 
 ```tsx
-import type { ButtonProps } from '@sruim/nexus-design/ui';
+import type { ButtonProps } from '@sruim/nexus-design';
 ```
 
 For Radix-based components, use:

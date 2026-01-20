@@ -31,7 +31,7 @@ pnpm add react react-dom
 
 ```typescript
 // uno.config.ts
-import { theme } from '@sruim/nexus-design/theme';
+import { theme } from '@sruim/nexus-design';
 import { defineConfig, presetUno } from 'unocss';
 
 export default defineConfig({
@@ -52,7 +52,7 @@ import '@sruim/nexus-design/style.css';
 使用命令式对话框 API（`Dialog.show`、`Confirm.show`）时必需：
 
 ```tsx
-import { Dialoger } from '@sruim/nexus-design/ui';
+import { Dialoger } from '@sruim/nexus-design';
 
 function App() {
   return (
@@ -67,8 +67,7 @@ function App() {
 ### 4. 使用组件
 
 ```tsx
-import { Button, Dialog, Select } from '@sruim/nexus-design/ui';
-import { IconButton } from '@sruim/nexus-design/components';
+import { Button, Dialog, Select, IconButton } from '@sruim/nexus-design';
 
 function Example() {
   return (
@@ -84,11 +83,7 @@ function Example() {
 
 | 路径 | 描述 |
 |------|------|
-| `@sruim/nexus-design` | 所有导出 |
-| `@sruim/nexus-design/ui` | UI 原语 (Button, Dialog, Select...) |
-| `@sruim/nexus-design/components` | 复合组件 (Icon, IconButton...) |
-| `@sruim/nexus-design/utils` | 工具函数 (cn, sleep, copy...) |
-| `@sruim/nexus-design/theme` | UnoCSS 主题配置 |
+| `@sruim/nexus-design` | 所有导出 (UI, 组件, 工具, 主题) |
 | `@sruim/nexus-design/style.css` | 全局样式 |
 
 ## 组件
@@ -155,7 +150,7 @@ text-text-disabled   // #64748B
 ### 玻璃材质
 
 ```tsx
-import { FrostGlass, DeepGlass } from '@sruim/nexus-design/tokens/materials';
+import { FrostGlass, DeepGlass } from '@sruim/nexus-design';
 
 // FrostGlass: backdrop-blur-12 bg-slate-900/70 border border-white/10
 // DeepGlass: backdrop-blur-12 bg-slate-950/90

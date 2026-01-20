@@ -31,7 +31,7 @@ pnpm add react react-dom
 
 ```typescript
 // uno.config.ts
-import { theme } from '@sruim/nexus-design/theme';
+import { theme } from '@sruim/nexus-design';
 import { defineConfig, presetUno } from 'unocss';
 
 export default defineConfig({
@@ -52,7 +52,7 @@ import '@sruim/nexus-design/style.css';
 Required for imperative dialog APIs (`Dialog.show`, `Confirm.show`):
 
 ```tsx
-import { Dialoger } from '@sruim/nexus-design/ui';
+import { Dialoger } from '@sruim/nexus-design';
 
 function App() {
   return (
@@ -67,8 +67,7 @@ function App() {
 ### 4. Use Components
 
 ```tsx
-import { Button, Dialog, Select } from '@sruim/nexus-design/ui';
-import { IconButton } from '@sruim/nexus-design/components';
+import { Button, Dialog, Select, IconButton } from '@sruim/nexus-design';
 
 function Example() {
   return (
@@ -84,11 +83,7 @@ function Example() {
 
 | Path | Description |
 |------|-------------|
-| `@sruim/nexus-design` | All exports |
-| `@sruim/nexus-design/ui` | UI primitives (Button, Dialog, Select...) |
-| `@sruim/nexus-design/components` | Composite components (Icon, IconButton...) |
-| `@sruim/nexus-design/utils` | Utilities (cn, sleep, copy...) |
-| `@sruim/nexus-design/theme` | UnoCSS theme configuration |
+| `@sruim/nexus-design` | All exports (UI, components, utils, theme) |
 | `@sruim/nexus-design/style.css` | Global styles |
 
 ## Components
@@ -155,7 +150,7 @@ text-text-disabled   // #64748B
 ### Glass Materials
 
 ```tsx
-import { FrostGlass, DeepGlass } from '@sruim/nexus-design/tokens/materials';
+import { FrostGlass, DeepGlass } from '@sruim/nexus-design';
 
 // FrostGlass: backdrop-blur-12 bg-slate-900/70 border border-white/10
 // DeepGlass: backdrop-blur-12 bg-slate-950/90

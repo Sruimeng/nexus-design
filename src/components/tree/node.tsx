@@ -76,7 +76,7 @@ export const TreeNode: React.FC<Props> = ({
     if (edit) {
       return (
         <SnapInput
-          className="mx-1 h-7 min-w-0 border border-core-blue rounded-2 bg-transparent p-2 text-3 outline-none"
+          className="paper-input mx-1 h-7 min-w-0 rounded-2 p-2 text-3 outline-none"
           value={displayName}
           autoFocus
           onChange={(value) => {

@@ -29,7 +29,7 @@ const Title = React.forwardRef<HTMLDivElement, React.HtmlHTMLAttributes<HTMLDivE
 );
 Title.displayName = 'PopoverTitle';
 
-const BaseStyle = cn('z-50 rounded-4 shadow-md outline-none', FrostGlass);
+const BaseStyle = cn('z-50 rounded-4 outline-none text-text-primary', FrostGlass);
 
 const Content = React.forwardRef<
   React.ComponentRef<typeof PopoverPrimitive.Content>,

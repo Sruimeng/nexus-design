@@ -55,7 +55,7 @@ interface IModelUploader extends React.FC<Props> {
 
 const BaseStyle =
   'relative size-full flex flex-col items-center justify-center overflow-hidden transition-colors duration-fast ease-smooth hover:bg-surface-hover';
-const BorderStyle = cn('box-border border border-dashed border-white/20', FrostGlass);
+const BorderStyle = cn('box-border border border-dashed border-border-dim', FrostGlass);
 
 export const ModelUploader: IModelUploader = ({
   className,

@@ -12,7 +12,7 @@ interface ImgViewerProps {
 }
 
 const BaseStyle = 'group relative size-full overflow-hidden';
-const BorderStyle = 'box-border border border-white/8';
+const BorderStyle = 'box-border border border-border-dim';
 
 interface ImgViewerComponent extends React.FC<ImgViewerProps> {
   Delete: typeof Delete;
@@ -31,7 +31,7 @@ const Delete = React.forwardRef<HTMLButtonElement, DeleteProps>(({ className, ..
     )}
     {...props}
   >
-    <Icon className="m-2 size-5 text-text-primary" icon="i-nexus:delete-monotone" />
+    <Icon className="m-2 size-5 text-white" icon="i-nexus:delete-monotone" />
   </button>
 ));
 

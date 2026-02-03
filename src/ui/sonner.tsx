@@ -6,7 +6,7 @@ import { Toaster as Sonner, toast } from 'sonner';
 type ToasterProps = React.ComponentProps<typeof Sonner>;
 
 const toastStyle = cn(
-  'text-base text-text-primary px-5 py-3 rounded-10 w-fit flex gap-2 items-center shadow-2xl',
+  'text-base text-text-primary px-5 py-3 rounded-10 w-fit flex gap-2 items-center',
   FrostGlass,
 );
 

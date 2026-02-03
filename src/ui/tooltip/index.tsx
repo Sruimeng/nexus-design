@@ -1,5 +1,4 @@
 import { Icon } from '@/components';
-import { FrostGlass } from '@/tokens/materials';
 import { cn } from '@/utils';
 import * as TooltipPrimitive from '@radix-ui/react-hover-card';
 import * as React from 'react';
@@ -13,7 +12,7 @@ const AnimationInStyle =
 const AnimationOutStyle =
   'data-[side=bottom]:slide-out-t-2 data-[side=left]:slide-out-r-2 data-[side=right]:slide-out-l-2 data-[side=top]:slide-out-b-2';
 
-const BaseStyle = cn('z-50 rounded-full shadow-md outline-none', FrostGlass);
+const BaseStyle = 'z-50 rounded-full outline-none text-text-secondary paper-chip';
 
 const Content = React.forwardRef<
   React.ComponentRef<typeof TooltipPrimitive.Content>,

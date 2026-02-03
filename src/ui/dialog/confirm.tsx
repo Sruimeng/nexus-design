@@ -54,7 +54,7 @@ const Confirm: IConfirm = ({
   };
 
   return (
-    <div className={cn('w-95 p-4 rounded-6 relative', FrostGlass, className)}>
+    <div className={cn('w-95 p-4 rounded-6 relative text-text-primary', FrostGlass, className)}>
       <Icon
         icon="i-nexus-close-monotone"
         className="absolute right-4 top-4 size-5 cursor-pointer text-text-secondary"

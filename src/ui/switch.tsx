@@ -4,10 +4,10 @@ import * as React from 'react';
 import { cn } from '@/utils';
 
 const BaseStyle =
-  'group inline-flex h-6 w-11 shrink-0 cursor-pointer items-center rounded-full border border-white/10 bg-white/10 transition-colors duration-fast ease-smooth data-[state=checked]:bg-core-blue/50';
+  'group inline-flex h-6 w-11 shrink-0 cursor-pointer items-center rounded-full border border-border-dim bg-surface-dim shadow-[0_2px_4px_rgba(60,40,20,0.08)] transition-colors duration-fast ease-smooth paper-focus data-[state=checked]:bg-core-blue/30';
 
 const ThumbStyle =
-  'pointer-events-none block size-5 rounded-full bg-white shadow-[0_0_4px_rgba(255,255,255,0.3)] transition-transform duration-fast ease-smooth data-[state=checked]:translate-x-5 data-[state=unchecked]:translate-x-0.5';
+  'pointer-events-none block size-5 rounded-full bg-surface-primary shadow-[0_3px_8px_rgba(60,40,20,0.12)] transition-transform duration-fast ease-smooth data-[state=checked]:translate-x-5 data-[state=unchecked]:translate-x-0.5';
 
 const Switch = React.forwardRef<
   React.ComponentRef<typeof SwitchPrimitives.Root>,

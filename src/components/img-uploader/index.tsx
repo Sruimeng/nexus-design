@@ -58,7 +58,7 @@ interface IImgUploader extends React.FC<Props> {
 
 const BaseStyle =
   'relative size-full flex flex-col items-center justify-center overflow-hidden transition-colors duration-fast ease-smooth hover:bg-surface-hover';
-const BorderStyle = 'box-border border border-dashed border-white/20';
+const BorderStyle = 'box-border border border-dashed border-border-dim';
 const DragOverStyle = cn('bg-core-blue/10 w-full hover:bg-core-blue/10', FrostGlass);
 
 export const ImgUploader: IImgUploader = ({

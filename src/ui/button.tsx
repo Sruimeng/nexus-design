@@ -4,16 +4,16 @@ import * as React from 'react';
 import { cn } from '@/utils';
 
 const BaseStyle =
-  'flex items-center justify-center rounded-25 box-border cursor-pointer transition-all duration-fast ease-smooth truncate font-bold active:scale-98';
+  'flex items-center justify-center rounded-25 box-border cursor-pointer transition-all duration-fast ease-smooth truncate font-semibold paper-focus hover:-translate-y-0.5 active:translate-y-0 active:scale-98';
 
 const SolidStyle =
-  'bg-core-blue/20 hover:bg-core-blue/30 border border-core-blue/50 text-white shadow-none hover:shadow-[0_0_15px_rgba(59,130,246,0.4)] transition-all duration-fast ease-smooth';
+  'accent-cta text-white transition-all duration-fast ease-smooth hover:shadow-[0_10px_22px_rgba(248,113,113,0.22)]';
 
 const HollowStyle =
-  'bg-transparent border border-white/20 text-slate-200 hover:bg-white/10 hover:text-white transition-colors duration-fast ease-smooth';
+  'paper-surface text-text-primary hover:bg-surface-hover transition-colors duration-fast ease-smooth';
 
 const PlainStyle =
-  'bg-transparent text-slate-200 hover:text-white hover:underline transition-colors duration-fast ease-smooth';
+  'bg-transparent text-text-secondary hover:text-text-primary hover:underline transition-colors duration-fast ease-smooth';
 
 const DisabledStyle = 'opacity-50 cursor-not-allowed pointer-events-none';
 

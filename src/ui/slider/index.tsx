@@ -45,16 +45,16 @@ const Slider = React.forwardRef<
           max={max}
           {...props}
         >
-          <SliderPrimitive.Track className="relative h-1 w-full grow overflow-hidden rounded-full bg-surface-dim">
-            <SliderPrimitive.Range className="absolute h-full bg-core-blue" />
+          <SliderPrimitive.Track className="relative h-1 w-full grow overflow-hidden rounded-full bg-border-subtle">
+            <SliderPrimitive.Range className="accent-gradient absolute h-full" />
           </SliderPrimitive.Track>
-          <SliderPrimitive.Thumb className="block size-3.75 cursor-pointer border-2 border-white rounded-full bg-surface-primary transition-colors duration-fast ease-smooth focus-visible:outline-none" />
+          <SliderPrimitive.Thumb className="block size-3.75 cursor-pointer border-2 border-border-dim rounded-full bg-surface-primary shadow-[0_3px_8px_rgba(60,40,20,0.12)] transition-colors duration-fast ease-smooth focus-visible:outline-none" />
         </SliderPrimitive.Root>
         {showValue && (
           <SnapInput
             type="text"
             className={cn(
-              'w-18.5 border border-white/8 rounded-2 bg-transparent py-2 text-center text-3',
+              'w-18.5 rounded-2 paper-input py-2 text-center text-3 text-text-primary',
               inputClassName,
             )}
             disabled={disabled}

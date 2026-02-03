@@ -1,23 +1,23 @@
 const obsidian = {
-  100: '#020617',
-  200: '#0F172A',
-  300: '#1E293B',
+  100: 'var(--color-bg)',
+  200: 'var(--color-bg-secondary)',
+  300: 'var(--color-surface)',
 } as const;
 
 const steel = {
-  100: '#CBD5E1',
-  200: '#E2E8F0',
-  300: '#F1F5F9',
+  100: 'var(--color-border)',
+  200: 'var(--color-border-subtle)',
+  300: 'var(--color-surface-hover)',
 } as const;
 
 const mist = {
-  100: '#E2E8F0',
-  200: '#F1F5F9',
-  300: '#FFFFFF',
+  100: 'var(--color-surface)',
+  200: 'var(--color-surface-elevated)',
+  300: 'var(--color-bg-secondary)',
 } as const;
 
 const core = {
-  blue: '#3B82F6',
+  blue: '#FB923C',
 } as const;
 
 const status = {
@@ -27,22 +27,22 @@ const status = {
 } as const;
 
 const surface = {
-  primary: obsidian[100],
-  secondary: steel[100],
-  dim: steel[200],
-  hover: steel[300],
+  primary: 'var(--color-surface)',
+  secondary: 'var(--color-surface-elevated)',
+  dim: 'var(--color-bg-secondary)',
+  hover: 'var(--color-surface-hover)',
 } as const;
 
 const border = {
-  subtle: mist[100],
-  dim: steel[300],
+  subtle: 'var(--color-border-subtle)',
+  dim: 'var(--color-border)',
   focus: core.blue,
 } as const;
 
 const text = {
-  primary: '#FFFFFF',
-  secondary: '#CBD5E1',
-  disabled: '#64748B',
+  primary: 'var(--color-text)',
+  secondary: 'var(--color-text-secondary)',
+  disabled: 'var(--color-text-muted)',
   accent: core.blue,
 } as const;
 

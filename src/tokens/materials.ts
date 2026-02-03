@@ -1,7 +1,7 @@
-const Void = 'bg-obsidian-100';
+const Void = 'bg-background';
 
-const FrostGlass = 'backdrop-blur-12 bg-slate-900/70 border border-white/10';
+const FrostGlass = 'paper-card backdrop-blur-10';
 
-const DeepGlass = 'backdrop-blur-12 bg-slate-950/90';
+const DeepGlass = 'backdrop-blur-6 bg-[rgba(43,36,28,0.45)]';
 
 export { DeepGlass, FrostGlass, Void };

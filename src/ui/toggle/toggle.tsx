@@ -9,13 +9,13 @@ export type Variant = {
 type ToggleProps = React.ComponentPropsWithoutRef<typeof TogglePrimitive.Root> & Variant;
 
 const BaseStyle =
-  'box-border flex items-center justify-center transition-colors duration-fast ease-smooth';
+  'box-border flex items-center justify-center transition-colors duration-fast ease-smooth paper-focus';
 
 const NavigationStyle =
-  'text-text-disabled text-5 px-3 py-2 rounded-3 hover:bg-surface-hover data-[state=on]:bg-surface-hover data-[state=on]:text-text-primary';
+  'text-text-secondary text-5 px-3 py-2 rounded-3 hover:bg-surface-hover data-[state=on]:paper-chip data-[state=on]:text-text-primary';
 
 const ButtonStyle =
-  'border border-white/8 rounded-6 text-3 px-3.75 py-1.75 text-text-secondary hover:bg-surface-hover data-[state=on]:bg-core-blue/20 data-[state=on]:border-core-blue data-[state=on]:text-text-primary';
+  'paper-input rounded-6 text-3 px-3.75 py-1.75 text-text-secondary hover:bg-surface-hover data-[state=on]:bg-core-blue/20 data-[state=on]:border-core-blue data-[state=on]:text-text-primary';
 
 const iconClassName =
   'w-10 h-10 rounded-3 p-2 hover:bg-surface-hover data-[state=on]:text-core-blue';

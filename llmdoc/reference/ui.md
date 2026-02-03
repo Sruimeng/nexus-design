@@ -1,4 +1,10 @@
-# 💠 Nexus Design System (NDS) - Core Specification
+---
+id: nexus-ui-spec
+type: reference
+related_ids: [nexus-tokens, nexus-materials, component-inventory]
+---
+
+# Nexus Design System (NDS) - Core Specification
 
 **Design Philosophy:** Luminous Clarity (光之澄澈)
 **Core Metaphor:** The HUD (Heads-Up Display) — 数据悬浮于现实之上。
@@ -78,10 +84,25 @@
 **Location:** `src/tokens/nexus.ts`
 
 ```typescript
-const obsidian = { 100: '#020617', 200: '#0F172A', 300: '#1E293B' };
-const steel = { 100: '#CBD5E1', 200: '#E2E8F0', 300: '#F1F5F9' };
-const mist = { 100: '#E2E8F0', 200: '#F1F5F9', 300: '#FFFFFF' };
-const core = { blue: '#3B82F6' };
+const obsidian = {
+  100: 'var(--color-bg)',
+  200: 'var(--color-bg-secondary)',
+  300: 'var(--color-surface)',
+} as const;
+
+const steel = {
+  100: 'var(--color-border)',
+  200: 'var(--color-border-subtle)',
+  300: 'var(--color-surface-hover)',
+} as const;
+
+const mist = {
+  100: 'var(--color-surface)',
+  200: 'var(--color-surface-elevated)',
+  300: 'var(--color-bg-secondary)',
+} as const;
+
+const core = { blue: '#FB923C' };  // Orange accent
 const status = { error: '#F43F5E', success: '#10B981', warning: '#F59E0B' };
 
 const easing = { smooth: 'cubic-bezier(0.4, 0, 0.2, 1)', spring: 'cubic-bezier(0.34, 1.56, 0.64, 1)' };
@@ -116,27 +137,29 @@ Nexus 风格不仅是圆角，而是混合形状。
 
 ### M2: Frost Glass (磨砂)
 
-* **Visual:** 背景模糊 (Blur 12px) + 中等透明度填充 (Fill 70%) + 1px 内描边 (Inner Border)。
-* **Usage:** 卡片、侧边栏、非主要浮层。
+* **Visual:** Backdrop blur + surface fill
+* **Usage:** Cards, panels, sidebars
 * **Spec:**
-  * Backdrop Blur: `12px`
-  * Fill: `rgba(15, 23, 42, 0.7)` (v1.1: increased from 0.4)
-  * Border: `1px solid rgba(255, 255, 255, 0.1)` (v1.1: increased from 0.08)
+  * Backdrop Blur: `10px`
+  * Fill: `paper-card` (CSS variable based)
 * **Implementation:** `src/tokens/materials.ts`
   ```typescript
-  const FrostGlass = 'backdrop-blur-12 bg-slate-900/70 border border-white/10';
+  const FrostGlass = 'paper-card backdrop-blur-10';
   ```
 
 ### M3: Deep Glass (深磨砂)
 
-* **Visual:** 高背景模糊 (Blur 12px) + 高遮盖力 (Fill 90%)。
-* **Usage:** 模态框 (Modal)、Dropdown 菜单、底部控制台 (Console)。防止背景文字干扰前景。
+* **Visual:** Moderate blur + dark warm tint
+* **Usage:** Modals, dropdowns, floating controls
+* **Spec:**
+  * Backdrop Blur: `6px`
+  * Fill: `rgba(43, 36, 28, 0.45)`
 * **Spec:**
   * Backdrop Blur: `12px` (v1.1: reduced from 24px)
   * Fill: `rgba(2, 6, 23, 0.9)` (v1.1: increased from 0.7)
 * **Implementation:** `src/tokens/materials.ts`
   ```typescript
-  const DeepGlass = 'backdrop-blur-12 bg-slate-950/90';
+  const DeepGlass = 'backdrop-blur-6 bg-[rgba(43,36,28,0.45)]';
   ```
 
 ---
@@ -150,29 +173,30 @@ Nexus 风格不仅是圆角，而是混合形状。
 **Variants (变体):**
 
 1. **Solid (Primary):**
-* Background: `bg-core-blue/20` (Hover: `/30`)
-* Border: `border-core-blue/50`
-* Text: `#FFFFFF` (Pure White, WCAG AAA)
-* Glow: `shadow-[0_0_15px_rgba(59,130,246,0.4)]` on hover
+* Background: `accent-gradient` + shadow
+* Text: `#FFFFFF`
+* Shadow: `shadow-[0_10px_26px_rgba(248,113,113,0.22)]` (hover: `/28`)
 
 2. **Hollow (Secondary):**
-* Background: Transparent
-* Border: `border-white/20`
-* Text: `#CBD5E1` (Slate-300, Hover: `#FFFFFF`)
-* Hover: `bg-white/10`
+* Background: `paper-surface`
+* Text: `text-text-primary`
+* Hover: `bg-surface-hover`
 
 3. **Plain (Text Only):**
 * Background: Transparent
-* Text: `#CBD5E1` (Slate-300, Hover: `#FFFFFF`)
+* Text: `text-text-secondary` (hover: `text-text-primary`)
 * Hover: Underline
 
 **Implementation:** `src/ui/button.tsx`
 ```typescript
-const VariantStyle = {
-  solid: 'bg-core-blue/20 hover:bg-core-blue/30 border border-core-blue/50 text-white',
-  hollow: 'bg-transparent border border-white/20 text-slate-200 hover:bg-white/10',
-  plain: 'bg-transparent text-slate-200 hover:text-white hover:underline',
-} as const;
+const SolidStyle =
+  'accent-gradient text-white border border-core-blue shadow-[0_10px_26px_rgba(248,113,113,0.22)] hover:shadow-[0_14px_34px_rgba(248,113,113,0.28)]';
+
+const HollowStyle =
+  'paper-surface text-text-primary hover:bg-surface-hover';
+
+const PlainStyle =
+  'bg-transparent text-text-secondary hover:text-text-primary hover:underline';
 
 const SizeMap = {
   small: 'h-6 text-2.5',

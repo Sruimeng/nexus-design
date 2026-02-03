@@ -22,8 +22,11 @@ status: stable
 
 **Technical Specs:**
 - [tech-stack.md](reference/tech-stack.md) - Dependencies, build tools, Storybook
-- [data-models.md](reference/data-models.md) - TypeScript interfaces, Nexus tokens
-- [ui.md](reference/ui.md) - Nexus Design System spec (v1.1)
+- [data-models.md](reference/data-models.md) - TypeScript interfaces, data models
+- [tokens.md](reference/tokens.md) - Design tokens (colors, motion)
+- [materials.md](reference/materials.md) - Material system (Void, FrostGlass, DeepGlass)
+- [components.md](reference/components.md) - Component inventory
+- [ui.md](reference/ui.md) - Nexus Design System spec
 - [shared-utilities.md](reference/shared-utilities.md) - Helper functions (cn, config)
 
 ## Architecture

@@ -1,13 +1,73 @@
 @use 'sass:math';
 @import '@unocss/reset/tailwind.css';
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
 @unocss;
 
-body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+:root {
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
 
-  @apply bg-background c-gray-100;
+  --color-bg: #f7f2ea;
+  --color-bg-secondary: #f1e7d8;
+  --color-surface: #fff7ee;
+  --color-surface-elevated: #fffbf6;
+  --color-surface-hover: #f6ebdd;
+  --color-border: #e6d8c7;
+  --color-border-subtle: #efe6d8;
+  --color-text: #2b241c;
+  --color-text-secondary: #6b5b4a;
+  --color-text-muted: #a6927a;
+  --color-accent: #fb923c;
+  --color-accent-rgb: 251 146 60;
+  --color-accent-hover: #f97316;
+  --color-accent-hover-rgb: 249 115 22;
+  --color-accent-2: #f87171;
+  --color-accent-2-rgb: 248 113 113;
+
+  --shadow-soft: 0 6px 18px rgba(60, 40, 20, 0.08);
+  --shadow-card: 0 12px 32px rgba(60, 40, 20, 0.1);
+  --shadow-chip: 0 4px 10px rgba(60, 40, 20, 0.08);
+  --highlight-soft: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  --highlight-strong: inset 0 1px 0 rgba(255, 255, 255, 0.85);
+
+  --safe-area-inset-top: env(safe-area-inset-top);
+  --safe-area-inset-right: env(safe-area-inset-right);
+  --safe-area-inset-bottom: env(safe-area-inset-bottom);
+  --safe-area-inset-left: env(safe-area-inset-left);
+}
+
+[data-theme='dark'] {
+  --color-bg: #1a1511;
+  --color-bg-secondary: #221b15;
+  --color-surface: #2a2119;
+  --color-surface-elevated: #32271e;
+  --color-surface-hover: #3a2d22;
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-border-subtle: rgba(255, 255, 255, 0.05);
+  --color-text: #f6ede3;
+  --color-text-secondary: #d2c2b2;
+  --color-text-muted: #a08b76;
+  --color-accent: #fb923c;
+  --color-accent-rgb: 251 146 60;
+  --color-accent-hover: #f97316;
+  --color-accent-hover-rgb: 249 115 22;
+  --color-accent-2: #f87171;
+  --color-accent-2-rgb: 248 113 113;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg);
+  background-image:
+    radial-gradient(1200px 520px at 10% -10%, rgba(248, 113, 113, 0.12), transparent 60%),
+    radial-gradient(900px 640px at 90% 0%, rgba(251, 146, 60, 0.1), transparent 55%);
+  color: var(--color-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+code, pre, .font-mono {
+  font-family: var(--font-mono);
 }
 
 * {
@@ -29,8 +89,93 @@ body {
 
 *::-webkit-scrollbar-thumb {
   display: none;
-  background: var(--gray-800);
+  background: var(--color-text-muted);
   border-radius: 4px;
+}
+
+.paper-card {
+  background-image:
+    linear-gradient(180deg, var(--color-surface-elevated), var(--color-surface)),
+    repeating-linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.2) 0,
+      rgba(255, 255, 255, 0.2) 1px,
+      transparent 1px,
+      transparent 4px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.03) 0,
+      rgba(0, 0, 0, 0.03) 1px,
+      transparent 1px,
+      transparent 5px
+    );
+  background-blend-mode: normal, soft-light, soft-light;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-card), var(--highlight-strong);
+}
+
+.paper-surface {
+  background-image:
+    linear-gradient(180deg, var(--color-surface-elevated), var(--color-surface)),
+    repeating-linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.18) 0,
+      rgba(255, 255, 255, 0.18) 1px,
+      transparent 1px,
+      transparent 6px
+    );
+  background-blend-mode: normal, soft-light;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-soft), var(--highlight-soft);
+}
+
+.paper-input {
+  background: var(--color-surface-elevated);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--highlight-soft), inset 0 1px 2px rgba(60, 40, 20, 0.08);
+}
+
+.paper-input:focus-visible,
+.paper-input:focus-within {
+  outline: none;
+  box-shadow:
+    var(--highlight-soft),
+    inset 0 1px 2px rgba(60, 40, 20, 0.08),
+    0 0 0 2px rgb(var(--color-accent-rgb) / 0.35);
+}
+
+.paper-chip {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-subtle);
+  box-shadow: var(--shadow-chip), var(--highlight-soft);
+}
+
+.accent-gradient {
+  background: linear-gradient(
+    90deg,
+    var(--color-accent-2) 0%,
+    var(--color-accent) 60%,
+    var(--color-accent-hover) 100%
+  );
+}
+
+.accent-cta {
+  background: linear-gradient(
+    90deg,
+    var(--color-accent-2) 0%,
+    var(--color-accent) 55%,
+    var(--color-accent-hover) 100%
+  );
+  border: 1px solid rgb(var(--color-accent-rgb) / 0.5);
+  box-shadow:
+    0 8px 18px rgb(var(--color-accent-2-rgb) / 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.55);
+}
+
+.paper-focus:focus-visible {
+  outline: 2px solid rgb(var(--color-accent-rgb) / 0.35);
+  outline-offset: 2px;
 }
 
 // 边框流光效果

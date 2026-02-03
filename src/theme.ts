@@ -3,8 +3,8 @@ import { border, core, mist, obsidian, status, steel, surface, text } from './to
 
 export const theme: Theme = {
   colors: {
-    background: 'rgba(0, 0, 0, 1)',
-    foreground: 'rgba(255, 255, 255, 1)',
+    background: 'var(--color-bg)',
+    foreground: 'var(--color-text)',
     obsidian,
     steel,
     mist,
@@ -35,9 +35,9 @@ export const theme: Theme = {
       80: 'rgba(255, 255, 255, 0.8)',
     },
     gray: {
-      1: 'rgba(12, 13, 16, 1)',
-      2: 'rgba(16, 17, 20, 1)',
-      3: 'rgba(27, 29, 32, 1)',
+      1: 'var(--color-bg)',
+      2: 'var(--color-bg-secondary)',
+      3: 'var(--color-surface)',
       50: 'rgba(250, 250, 250, 1)',
       100: 'rgba(242, 242, 242, 1)',
       200: 'rgba(229, 229, 229, 1)',
@@ -45,10 +45,10 @@ export const theme: Theme = {
       400: 'rgba(153, 153, 153, 1)',
       500: 'rgba(102, 102, 102, 1)',
       600: 'rgba(68, 68, 68, 1)',
-      700: 'rgba(58, 58, 58, 1)',
-      800: 'rgba(51, 51, 51, 1)',
-      900: 'rgba(32, 32, 32, 1)',
-      950: 'rgba(28, 28, 28, 1)',
+      700: 'rgba(64, 64, 64, 1)',
+      800: 'rgba(38, 38, 38, 1)',
+      900: 'rgba(23, 23, 23, 1)',
+      950: 'rgba(10, 10, 10, 1)',
     },
     purple: {
       1: 'rgba(80, 59, 227, 1)',
@@ -62,8 +62,8 @@ export const theme: Theme = {
       15: 'rgba(255, 62, 62, 0.15)',
     },
     blue: {
-      1: 'rgba(89, 111, 255, 1)',
-      2: 'rgba(28, 161, 241, 1)',
+      1: 'rgba(251, 146, 60, 1)',
+      2: 'rgba(249, 115, 22, 1)',
     },
     green: {
       1: 'rgba(63, 221, 120, 1)',

@@ -1,20 +1,37 @@
 ---
 id: ref-data-models
 type: reference
-related_ids: [ref-component-api, guide-validation, nexus-tokens]
+related_ids: [ref-component-api, guide-validation, nexus-tokens, nexus-materials]
 ---
 
 # Data Models
 
 ## Design Tokens
 
+**File:** `src/tokens/nexus.ts`
+
 ### Color Primitives
 
 ```typescript
-const obsidian = { 100: '#020617', 200: '#0F172A', 300: '#1E293B' } as const;
-const steel = { 100: '#CBD5E1', 200: '#E2E8F0', 300: '#F1F5F9' } as const;
-const mist = { 100: '#E2E8F0', 200: '#F1F5F9', 300: '#FFFFFF' } as const;
-const core = { blue: '#3B82F6' } as const;
+const obsidian = {
+  100: 'var(--color-bg)',
+  200: 'var(--color-bg-secondary)',
+  300: 'var(--color-surface)',
+} as const;
+
+const steel = {
+  100: 'var(--color-border)',
+  200: 'var(--color-border-subtle)',
+  300: 'var(--color-surface-hover)',
+} as const;
+
+const mist = {
+  100: 'var(--color-surface)',
+  200: 'var(--color-surface-elevated)',
+  300: 'var(--color-bg-secondary)',
+} as const;
+
+const core = { blue: '#FB923C' } as const;  // Orange accent
 const status = { error: '#F43F5E', success: '#10B981', warning: '#F59E0B' } as const;
 ```
 
@@ -22,22 +39,22 @@ const status = { error: '#F43F5E', success: '#10B981', warning: '#F59E0B' } as c
 
 ```typescript
 const surface = {
-  primary: obsidian[100],
-  secondary: steel[100],
-  dim: steel[200],
-  hover: steel[300],
+  primary: 'var(--color-surface)',
+  secondary: 'var(--color-surface-elevated)',
+  dim: 'var(--color-bg-secondary)',
+  hover: 'var(--color-surface-hover)',
 } as const;
 
 const border = {
-  subtle: mist[100],
-  dim: steel[300],
+  subtle: 'var(--color-border-subtle)',
+  dim: 'var(--color-border)',
   focus: core.blue,
 } as const;
 
 const text = {
-  primary: '#FFFFFF',
-  secondary: '#CBD5E1',
-  disabled: '#64748B',
+  primary: 'var(--color-text)',
+  secondary: 'var(--color-text-secondary)',
+  disabled: 'var(--color-text-muted)',
   accent: core.blue,
 } as const;
 ```
@@ -60,10 +77,12 @@ const duration = {
 
 ### Materials
 
+**File:** `src/tokens/materials.ts`
+
 ```typescript
-const Void = 'bg-obsidian-100';
-const FrostGlass = 'backdrop-blur-12 bg-slate-900/70 border border-white/10';
-const DeepGlass = 'backdrop-blur-12 bg-slate-950/90';
+const Void = 'bg-background';
+const FrostGlass = 'paper-card backdrop-blur-10';
+const DeepGlass = 'backdrop-blur-6 bg-[rgba(43,36,28,0.45)]';
 ```
 
 **Location:** `src/tokens/nexus.ts`, `src/tokens/materials.ts`

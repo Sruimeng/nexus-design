@@ -6,10 +6,10 @@ import { Icon } from '../../components/icon';
 import { cn } from '@/utils';
 
 const BaseStyle =
-  'size-5 shrink-0 box-border rounded border border-white/10 transition-colors duration-fast ease-smooth';
+  'size-5 shrink-0 box-border rounded border border-border-dim bg-surface-primary shadow-[0_2px_4px_rgba(60,40,20,0.08)] transition-colors duration-fast ease-smooth paper-focus';
 
 const CheckedStyle =
-  'data-[state=checked]:bg-core-blue data-[state=checked]:border-core-blue data-[state=checked]:shadow-[0_0_8px_rgba(59,130,246,0.4)]';
+  'data-[state=checked]:bg-core-blue data-[state=checked]:border-core-blue data-[state=checked]:shadow-[0_6px_14px_rgb(var(--color-accent-rgb)_/_0.25)]';
 
 const Checkbox = React.forwardRef<
   React.ComponentRef<typeof CheckboxPrimitive.Root>,
